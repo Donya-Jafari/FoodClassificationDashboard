@@ -38,8 +38,11 @@ def index():
 def predict_image():
     file = request.files['file']
     if file:
+        img_path = os.path.join('static', 'uploaded_image.jpg')
         image = Image.open(io.BytesIO(file.read()))
-        input_data = preprocess_input(image)
+        image.save(img_path)
+
+        input_data = preprocess_input(np.array(image))
         result = process_prediction(input_data)
         prediction = x['train'].features['label'].names[result[0]]
         return render_template('index.html', prediction=prediction)

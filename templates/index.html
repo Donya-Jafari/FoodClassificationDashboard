@@ -1,20 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Classification Project Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Classification Project Dashboard</h1>
+        <h1>Image Classification Dashboard</h1>
         <form action="/predict" method="post" enctype="multipart/form-data">
             <input type="file" name="file" accept="image/*" required>
-            <button type="submit">Predict</button>
+            <button type="submit">Upload Image</button>
         </form>
+
         {% if prediction %}
-        <div class="result">
-            <h2>Prediction: {{ prediction }}</h2>
-        </div>
+            <div class="result">
+                <h2>Prediction</h2>
+                <p>{{ prediction }}</p>
+                <img id="uploaded-image" src="{{ url_for('static', filename='uploaded_image.jpg') }}" alt="Uploaded Image">
+            </div>
         {% endif %}
     </div>
 </body>
