@@ -1,10 +1,11 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, jsonify, render_template, url_for
 from huggingface_hub import login
 from datasets import load_dataset
 import tensorflow as tf
 import numpy as np
 from PIL import Image
 import io
+import random
 import os
 
 
@@ -15,6 +16,26 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 model = tf.keras.models.load_model('../image_classification.keras')
 login('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')
 x = load_dataset('OmidAghili/Image_Classification')
+
+def write():
+    randomNum = random.randrange(len(x['train']))
+    image, label = x['train'][randomNum]['image'], x['train'][randomNum]['label']
+    img_path = os.path.join('static', '11.jpg')
+    image.save(img_path)
+    input_data = preprocess_input(np.array(image))
+    result = process_prediction(input_data)
+    prediction = x['train'].features['label'].names[result[0]]
+
+    return prediction, x['train'].features['label'].names[label]
+
+
+@app.route('/update_image', methods=['GET'])
+def update_image():
+    pred, dataset = write()
+    image_url = url_for('static', filename='11.jpg')
+    return jsonify({'image_url': image_url, 'prediction': pred, 'dataset': dataset})
+
+
 
 def preprocess_input(sample_image):
     sample_image = tf.convert_to_tensor(sample_image, dtype=tf.float32)
