@@ -31,4 +31,6 @@ To run this project locally, you'll need the following Python libraries:
 You can install these dependencies using pip:
 
 ```bash
+git clone https://github.com/Donya-Jafari/FoodClassificationDashboard.git
 pip install -r requirements.txt
+gunicorn app:app
