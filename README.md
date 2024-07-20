@@ -28,7 +28,7 @@ To run this project locally, you'll need the following Python libraries:
 - `datasets`
 - `Pillow`
 
-You can install these dependencies using pip:
+You can run this on your local by following these steps:
 
 ```bash
 git clone https://github.com/Donya-Jafari/FoodClassificationDashboard.git
