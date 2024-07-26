@@ -7,7 +7,7 @@ Welcome to the Food22 Classification Dashboard repository! This project features
 - **Image Classification**: Upload an image and get predictions from the trained model.
 - **Dataset Visualization**: View class distributions and dataset size.
 - **Model Performance**: Examine the confusion matrix and other performance metrics.
-- **Interactibg with dataset**: Choose an image from the dataset and see whats the dataset label and what is the model prediction.
+- **Interacting with dataset**: Choose an image from the dataset and see whats the dataset label and what is the model prediction.
 
 ## Live Demo
 
