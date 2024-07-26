@@ -12,21 +12,9 @@ Welcome to the Food22 Classification Dashboard repository! This project features
 ## Live Demo
 
 - Check out the live demo of the Food22 Classification Dashboard: [classifier](https://food22classifier.dpzone.top)
-- Here you can see the repo of the complete project: [repo](https://github.com/sinaaasghari/Second-Try)
+
 ## Running Locally
 
-### Requirements
-
-To run this project locally, you'll need the following Python libraries:
-
-- `tensorflow`
-- `numpy`
-- `matplotlib`
-- `flask`
-- `gunicorn`
-- `huggingface_hub`
-- `datasets`
-- `Pillow`
 
 You can run this on your local by following these steps:
 
@@ -34,3 +22,6 @@ You can run this on your local by following these steps:
 git clone https://github.com/Donya-Jafari/FoodClassificationDashboard.git
 pip install -r requirements.txt
 gunicorn app:app
+```
+
+- Here you can see the repo of the complete project: [repo](https://github.com/sinaaasghari/Second-Try)
