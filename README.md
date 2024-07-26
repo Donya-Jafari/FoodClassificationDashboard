@@ -11,8 +11,8 @@ Welcome to the Food22 Classification Dashboard repository! This project features
 
 ## Live Demo
 
-Check out the live demo of the Food22 Classification Dashboard: [classifier](https://food22classifier.dpzone.top)
-Here you can see the repo of the complete project: [repo](https://food22classifier.dpzone.top](https://github.com/sinaaasghari/Second-Try)
+- **Check out the live demo of the Food22 Classification Dashboard: [classifier](https://food22classifier.dpzone.top)
+- **Here you can see the repo of the complete project: [repo](https://github.com/sinaaasghari/Second-Try)
 ## Running Locally
 
 ### Requirements
