@@ -12,6 +12,52 @@
             <!-- Left side content -->
             <h2>Class Distributions</h2>
             <img src="{{ url_for('static', filename='dist.png') }}" alt="Class Distributions">
+            <h2>Loss Plot</h2>
+            <img src="{{ url_for('static', filename='loss.png') }}" alt="Loss Plot">
+            <h2>Accuracy Plot</h2>
+            <img src="{{ url_for('static', filename='acc.png') }}" alt="Loss Plot">
+        </div>
+
+        <div class="center-container">
+            <h1>Food22 Classification Dashboard</h1>
+            <p>Note: upload in .jpg format</p>
+            <form action="/predict" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*" required>
+                <button type="submit">Upload Image</button>
+            </form>
+
+            {% if prediction %}
+                <div class="result">
+                    <h2>Prediction</h2>
+                    <p>{{ prediction }}</p>
+                    <img id="uploaded-image" src="{{ url_for('static', filename='uploaded_image.jpg') }}" alt="Uploaded Image">
+                </div>
+            {% endif %}
+
+            <h2>Validation Confusion Matrix</h2>
+            <p>Evaluation results - Loss: 0.6897609829902649, Accuracy: 0.8656572103500366</p>
+            <iframe src="{{ url_for('static', filename='cnf.html') }}" width="100%" height="600px" frameborder="0" title="Validation Confusion Matrix"></iframe>     
+
+        </div>
+
+        <div class="right-container">
+            <!-- Right side content -->
+            <h2>Select an Image from Dataset</h2>
+            
+            <div class="slideshow-container">
+                <a class="prev" onclick="updateImage()">&#10094;</a>
+                <a class="next" onclick="updateImage()">&#10095;</a>
+                <h3>Prediction:</h3>
+                <p id="prediction-text">No prediction yet</p>
+                <h3>Dataset:</h3>
+                <p id="dataset-text">No dataset label yet</p>
+                <div class="image-container">
+                    <img id="dataset-image" src="{{ url_for('static', filename='11.jpg') }}" alt="Not yet available!">
+                </div>
+            </div>
+           
+            <h2>Source Code:</h2>
+            <a href="https://github.com/Donya-Jafari/FoodClassificationDashboard" target="_blank">github repo</a>
             <h4>Dataset size: 15518</h4>
             <h4>Here you can see the list of labels our model is able to predict:</h4>
             <ol>
@@ -38,53 +84,6 @@
                 <li>steak</li>
                 <li>sushi</li>
             </ol>
-            <h2>Loss Plot</h2>
-            <img src="{{ url_for('static', filename='loss.png') }}" alt="Loss Plot">
-        </div>
-
-        <div class="center-container">
-            <h1>Food22 Classification Dashboard</h1>
-            <p>Note: upload in .jpg format</p>
-            <form action="/predict" method="post" enctype="multipart/form-data">
-                <input type="file" name="file" accept="image/*" required>
-                <button type="submit">Upload Image</button>
-            </form>
-
-            {% if prediction %}
-                <div class="result">
-                    <h2>Prediction</h2>
-                    <p>{{ prediction }}</p>
-                    <img id="uploaded-image" src="{{ url_for('static', filename='uploaded_image.jpg') }}" alt="Uploaded Image">
-                </div>
-            {% endif %}
-
-            <h2>Validation Confusion Matrix</h2>
-            <p>Evaluation results - Loss: 0.6897609829902649, Accuracy: 0.8656572103500366</p>
-            <iframe src="{{ url_for('static', filename='cnf.html') }}" width="100%" height="600px" frameborder="0" title="Validation Confusion Matrix"></iframe>     
-            <h2>Test Confusion Matrix</h2>
-            <img src="{{ url_for('static', filename='test_confusion_matrix.png') }}" alt="Not yet available!">
-
-        </div>
-
-        <div class="right-container">
-            <!-- Right side content -->
-            <h2>Select an Image from Dataset</h2>
-            
-            <div class="slideshow-container">
-                <a class="prev" onclick="updateImage()">&#10094;</a>
-                <a class="next" onclick="updateImage()">&#10095;</a>
-                <h3>Prediction:</h3>
-                <p id="prediction-text">No prediction yet</p>
-                <h3>Dataset:</h3>
-                <p id="dataset-text">No dataset label yet</p>
-                <div class="image-container">
-                    <img id="dataset-image" src="{{ url_for('static', filename='11.jpg') }}" alt="Not yet available!">
-                </div>
-            </div>
-           
-            <h2>Source Code:</h2>
-            <a href="https://github.com/Donya-Jafari/FoodClassificationDashboard" target="_blank">github repo</a>
-
         </div>
     </div>
 <!-- <script src="{{ url_for('static', filename='slideshow.js') }}"></script> -->
