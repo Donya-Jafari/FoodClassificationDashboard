@@ -14,7 +14,7 @@ app = Flask(__name__)
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 model = tf.keras.models.load_model('../image_classification.keras')
-login('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')
+login('secret_val_0')
 x = load_dataset('OmidAghili/Image_Classification')
 
 def write():
