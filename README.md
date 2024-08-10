@@ -8,11 +8,7 @@ Welcome to the Food22 Classification Dashboard repository! This project features
 - **Dataset Visualization**: View class distributions and dataset size.
 - **Model Performance**: Examine the confusion matrix and other performance metrics.
 - **Interacting with dataset**: Choose an image from the dataset and see whats the dataset label and what is the model prediction.
-
-## Live Demo
-
-- Check out the live demo of the Food22 Classification Dashboard: [classifier](https://food22classifier.dpzone.top)
-
+Donya-Jafari/CNN_AIcourse
 ## Running Locally
 
 
